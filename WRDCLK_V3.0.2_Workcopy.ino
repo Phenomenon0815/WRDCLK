@@ -140,8 +140,8 @@ void loop() {
   //##### Sekundentakt
   if (second() != now_sekunde) {
     now_sekunde = second();
+    DEBUG_PRINTLN("Sensortaste abfragen");
     SensorTaste();
-    DEBUG_PRINTLN("Signal auf Bus ausgegeben");
   }
   //##### Tageszeit auswerten  
   TageszeitAuswerten()
