@@ -27,10 +27,10 @@
 #include "avr/wdt.h"
 
 //##### Pins am Arduino konfigurieren
-#define NUM_LEDS 114       // Anzahl der LEDs
-#define DATA_PIN 6         // Pin 6 für LED DATA konfigurieren
-#define DCF_PIN 2	         // Pin 2 für DCF 77 DATA konfigurieren
-#define DCF_INTERRUPT 0		 // Interrupt für Pin 2 setzen
+#define NUM_LEDS 114        // Anzahl der LEDs
+#define DATA_PIN 6          // Pin 6 für LED DATA konfigurieren
+#define DCF_PIN 2	        // Pin 2 für DCF 77 DATA konfigurieren
+#define DCF_INTERRUPT 0		// Interrupt für Pin 2 setzen
 
 //##### DEBUG an oder aus > auskommentieren oder eben nicht
 //#define DEBUG             
@@ -195,7 +195,7 @@ void LichtAn() {
 void LichtAus() {
   if (toggle == true) {
     toggle = false;
-    for (brightness_value_temp = 0; brightness_value_temp < brightness_value_max; brightness_value_temp ++) {
+    for (brightness_value_temp = brightness_value_max; brightness_value_temp > 0; brightness_value_temp --) {
       LEDS.setBrightness(brightness_value_temp);
       FastLED.show();
     }
