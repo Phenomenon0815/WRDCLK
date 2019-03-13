@@ -12,15 +12,7 @@
 // - FASTLED.show nur im Minutentakt - evtl. LED Ausfallrate verringern
 // - Helligkeitsstufen abhängig von Tageszeit
 // - Sensortaste einmal pro Sekunde abfragen
-//
-// TEST:
-// - Von 0:00 bis 6:59 Licht aus
-// - Testweise Sensortaste auskommentiert
-//
-// TODO: 
-// - Dauer des Sensorsdrückens um z.B. Helligkeit oder Farbe zu ändern
-// - Temperaturanzeige zu regelmäßigen Zeitpunkt
-// - Servicefunktion: LEDtest bei betätigtem Serviceschalter - in Arbeit
+// - Servicefunktion: LEDtest bei Verbindung D4 mit GND
 
 //##### Libraries importieren
 #include "FastLED.h"
@@ -145,7 +137,6 @@ void setup() {
 }
 
 void loop() {
-
   
   if (now() != prevDisplay) {
     prevDisplay = now();
